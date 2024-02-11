@@ -1,11 +1,12 @@
+import { useState } from "react";
 import logo from "./assets/logo-nlw.svg";
-//@ts-ignore
 import { NewNoteCard } from './components/newnotecard';
-//@ts-ignore
 import { NoteCard } from './components/notecard';
 
-
 export function App() {
+  const [notes, setNotes] = useState({
+    
+  })
   return (
     <div className="mx-auto max-w-6xl my-12 space-y-6">
       <img src={logo} alt="NLW Expert" />
@@ -22,11 +23,8 @@ export function App() {
 
       <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
         <NewNoteCard/>
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+        <NoteCard note={{date:new Date(), content: "hello world"}}/>
+       
 
         
       </div>
